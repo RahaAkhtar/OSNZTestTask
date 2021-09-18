@@ -28,7 +28,7 @@ extension PostsViewController : UITableViewDataSource, UITableViewDelegate, UISe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.searchController.searchBar.resignFirstResponder()
         let obj = self.filteredData[indexPath.row]
         Router.shared.openCommentsViewController(obj: obj, controller: self)
     }
