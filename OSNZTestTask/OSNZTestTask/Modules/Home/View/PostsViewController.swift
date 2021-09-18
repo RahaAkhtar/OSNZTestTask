@@ -14,7 +14,9 @@ class PostsViewController: UIViewController {
     
     let viewModel = PostsViewModel()
     var postList:[PostResponseModelElement] = [PostResponseModelElement]()
-    
+    var filteredData: [PostResponseModelElement]!
+    var searchController: UISearchController!
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
     }
@@ -26,7 +28,9 @@ class PostsViewController: UIViewController {
                 return
             }
             self.postList = list
+            self.filteredData = list
             self.reloadData()
+            self.searchConterillerInit()
         }
         
         viewModel.errorComes = { msg in
@@ -38,8 +42,6 @@ class PostsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
         // Do any additional setup after loading the view.
         self.decorateUI()
         api()
@@ -61,7 +63,22 @@ class PostsViewController: UIViewController {
     }
     
     func reloadData() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.tableView.reloadData()
     }
 
+    func searchConterillerInit() {
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+    
+        searchController.obscuresBackgroundDuringPresentation = false
+        
+        searchController.searchBar.sizeToFit()
+        tableView.tableHeaderView = searchController.searchBar
+        
+        definesPresentationContext = true
+    }
+    
 }
