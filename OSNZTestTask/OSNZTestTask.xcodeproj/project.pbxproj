@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		629E4C2E26F5C66200A57DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E4C2D26F5C66200A57DEC /* AppDelegate.swift */; };
 		629E4C3026F5C66200A57DEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E4C2F26F5C66200A57DEC /* SceneDelegate.swift */; };
-		629E4C3226F5C66200A57DEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E4C3126F5C66200A57DEC /* ViewController.swift */; };
 		629E4C3526F5C66200A57DEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629E4C3326F5C66200A57DEC /* Main.storyboard */; };
 		629E4C3726F5C66300A57DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629E4C3626F5C66300A57DEC /* Assets.xcassets */; };
 		629E4C3A26F5C66300A57DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629E4C3826F5C66300A57DEC /* LaunchScreen.storyboard */; };
@@ -64,7 +63,6 @@
 		629E4C2A26F5C66200A57DEC /* OSNZTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSNZTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629E4C2D26F5C66200A57DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		629E4C2F26F5C66200A57DEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		629E4C3126F5C66200A57DEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		629E4C3426F5C66200A57DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		629E4C3626F5C66300A57DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		629E4C3926F5C66300A57DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 				629E4C5D26F5C72F00A57DEC /* Utils */,
 				629E4C2D26F5C66200A57DEC /* AppDelegate.swift */,
 				629E4C2F26F5C66200A57DEC /* SceneDelegate.swift */,
-				629E4C3126F5C66200A57DEC /* ViewController.swift */,
 				629E4C3326F5C66200A57DEC /* Main.storyboard */,
 				629E4C3626F5C66300A57DEC /* Assets.xcassets */,
 				629E4C3826F5C66300A57DEC /* LaunchScreen.storyboard */,
@@ -264,10 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				629E4C7E26F5D14800A57DEC /* ViewModel */,
-				629E4C7F26F5D14800A57DEC /* DataResource */,
 				629E4C8026F5D14800A57DEC /* Model */,
 				629E4C8126F5D14800A57DEC /* View */,
-				629E4CA126F5D14800A57DEC /* Validation */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -278,13 +273,6 @@
 				629E4D0726F5DCBD00A57DEC /* PostsViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		629E4C7F26F5D14800A57DEC /* DataResource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataResource;
 			sourceTree = "<group>";
 		};
 		629E4C8026F5D14800A57DEC /* Model */ = {
@@ -330,20 +318,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		629E4CA126F5D14800A57DEC /* Validation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Validation;
-			sourceTree = "<group>";
-		};
 		629E4CB726F5D1C700A57DEC /* Comments */ = {
 			isa = PBXGroup;
 			children = (
 				629E4CB826F5D1C700A57DEC /* ViewModel */,
 				629E4CFB26F5D79E00A57DEC /* View */,
 				629E4CBA26F5D1C700A57DEC /* Model */,
-				629E4CDB26F5D1C700A57DEC /* Validation */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -362,13 +342,6 @@
 				629E4D0B26F5E74B00A57DEC /* CommentsModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		629E4CDB26F5D1C700A57DEC /* Validation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Validation;
 			sourceTree = "<group>";
 		};
 		629E4CFB26F5D79E00A57DEC /* View */ = {
@@ -542,7 +515,6 @@
 				629E4D0526F5D79E00A57DEC /* CommentsViewController.swift in Sources */,
 				629E4C6D26F5C9AC00A57DEC /* PostApi.swift in Sources */,
 				629E4D0626F5D79E00A57DEC /* CommentsControllerExtension.swift in Sources */,
-				629E4C3226F5C66200A57DEC /* ViewController.swift in Sources */,
 				629E4D0C26F5E74B00A57DEC /* CommentsModel.swift in Sources */,
 				629E4CF326F5D28100A57DEC /* PostTableViewCell.swift in Sources */,
 				629E4CF826F5D4E100A57DEC /* PostViewControllerExtension.swift in Sources */,
