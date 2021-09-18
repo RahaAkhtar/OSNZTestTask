@@ -26,13 +26,19 @@ class CommentsViewController: UIViewController {
         self.tableView.dataSource = self
         // Do any additional setup after loading the view.
         self.decorateUI()
-        viewModel.getPostCommentsApi(postId: "\(postResponseModelElement.id ?? 1)")
-        viewModelBinding()
+        self.LoadingStart()
+        if let postID = postResponseModelElement.id {
+            viewModel.getPostCommentsApi(postId: "\(postID)")
+            viewModelBinding()
+        } else {
+            self.alertMessageShow(message: "Post ID is nil.")
+        }
+        
     }
     
     func viewModelBinding() {
         viewModel.comentsResponseComes = { response in
-            
+            self.LoadingStop()
             guard let list = response else {
                 return
             }
@@ -41,6 +47,7 @@ class CommentsViewController: UIViewController {
         }
         
         viewModel.errorComes = { msg in
+            self.LoadingStop()
             self.alertMessageShow(message: msg?.description ?? "")
         }
     }

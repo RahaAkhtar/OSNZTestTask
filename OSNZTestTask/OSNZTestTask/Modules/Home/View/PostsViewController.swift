@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class PostsViewController: UIViewController {
 
@@ -16,15 +17,11 @@ class PostsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-        
-        viewModel.getPostApi()
-        //viewModel.getPostCommentsApi(postId: "1")
-        viewModelBinding()
     }
     
     func viewModelBinding() {
         viewModel.responseComes = { response in
-            
+            self.LoadingStop()
             guard let list = response else {
                 return
             }
@@ -33,6 +30,7 @@ class PostsViewController: UIViewController {
         }
         
         viewModel.errorComes = { msg in
+            self.LoadingStop()
             self.alertMessageShow(message: msg?.description ?? "")
         }
     }
@@ -44,6 +42,13 @@ class PostsViewController: UIViewController {
         self.tableView.dataSource = self
         // Do any additional setup after loading the view.
         self.decorateUI()
+        api()
+    }
+    
+    func api()  {
+        self.LoadingStart()
+        viewModel.getPostApi()
+        viewModelBinding()
     }
     
     func decorateUI() {
