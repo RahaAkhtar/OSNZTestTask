@@ -14,28 +14,23 @@ extension CommentsViewController : UITableViewDataSource, UITableViewDelegate
 {
     // MARK: - Table view datasource method
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return self.postCommentsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.className, for: indexPath) as! CommentTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.className, for: indexPath) as! PostTableViewCell
         cell.selectionStyle = .none
+        cell.configurCommentCell(obj: self.postCommentsList[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let cell = tableView.cellForRow(at: indexPath)
-        cell?.selectionStyle = .none
-        
-        //let obj = self.listEventArray[indexPath.row]
-        //Router.shared.openProfileDetailViewController(controller: self, selectedObj: obj)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        
-        return 60
+        return UITableView.automaticDimension
     }
     
 }

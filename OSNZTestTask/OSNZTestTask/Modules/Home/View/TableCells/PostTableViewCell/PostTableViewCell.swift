@@ -18,9 +18,13 @@ class PostTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func confgigureCell(obj:PostResponseModelElement) {
+    func configurCell(obj:PostResponseModelElement) {
         self.titleLabel?.text = obj.title ?? ""
         self.bodyLabel?.text = obj.body ?? ""
     }
     
+    func configurCommentCell(obj:PostCommentModelElement) {
+        self.titleLabel?.text = obj.name ?? ""
+        self.bodyLabel?.text = obj.body ?? ""
+    }
 }

@@ -21,14 +21,11 @@ extension PostsViewController : UITableViewDataSource, UITableViewDelegate
         
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.className, for: indexPath) as! PostTableViewCell
         cell.selectionStyle = .none
-        cell.confgigureCell(obj: postList[indexPath.row])
+        cell.configurCell(obj: postList[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let cell = tableView.cellForRow(at: indexPath)
-        cell?.selectionStyle = .none
         
         let obj = self.postList[indexPath.row]
         Router.shared.openCommentsViewController(obj: obj, controller: self)
