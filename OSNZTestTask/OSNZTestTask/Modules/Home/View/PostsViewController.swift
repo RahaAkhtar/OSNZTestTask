@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
+//import NVActivityIndicatorView
 
 class PostsViewController: UIViewController {
 
